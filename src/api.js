@@ -13,6 +13,7 @@ function getNews(subject) {
         console.error('Ocorreu um err',err)
     })
 }
+
 function getNewsById(subject, id)  {
     return fetch(`${URL}/${subject}/${id}`, params)
     .then((response)=> response.json())
