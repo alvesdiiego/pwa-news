@@ -1,6 +1,8 @@
 import React, { memo, useEffect, useState } from 'react'
 import { Row, Col } from 'antd'
-import Economy from'./components/Economy'
+import Economy from './components/Economy'
+import Technology from './components/Technology'
+import World from './components/World'
 import Api from '../api'
 
 function Home() {
@@ -10,9 +12,9 @@ function Home() {
     const handleNews = (articles) => {
       setLoading(false)
       setNews({
-       world: articles[0].value?.values,
-       economy: articles[1].value?.value,
-       technology: articles[2].value?.value,
+       world: articles[0]?.value.values,
+       economy: articles[1]?.value.value,
+       technology: articles[2]?.value.value,
       })
     }
   
@@ -33,8 +35,9 @@ function Home() {
       <Row gutter={[16, 16]}>
         <Col span={24} md={16}>
           <h2>World</h2>
-          
+         <World values={news?.world} />
         </Col>
+        
         <Col span={24} md={8}>
           <h2>Economy</h2>
           <Economy values={news?.economy} />
