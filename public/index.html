@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -13,11 +13,25 @@
     
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
-    <title>React App</title>
+    <title>PWA NEWS</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+    <script>
+        if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js', {  useCache: true }).then(function(registration) {
+            console.log('Registro realizado', registration.scope);
+          }, function(err) {
+            console.log('SW falhou', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
   </body>
 </html>

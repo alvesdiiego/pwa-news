@@ -2,20 +2,30 @@ import React from 'react';
 import { BrowserRouter as Router,Switch ,Route } from 'react-router-dom';
 import './App.css';
 import Home from './containers/Home';
+import Post from './containers/Post';
+import Header from './components/header';
 
 function App() {
   return (
+    
     <main>
-      <section>
-        <Router>
+    <section>
+      <Header/>
+      <Router>
+        <div>
           <Switch>
+            <Route path="/:subject/:id">
+              <Post />
+            </Route>
             <Route path="/">
               <Home />
             </Route>
           </Switch>
-        </Router>
-      </section>
-    </main>
+        </div>
+      </Router>
+    </section>
+  </main>
+ 
   );
 }
 

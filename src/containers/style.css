@@ -2,12 +2,19 @@
     padding-top: 12px;
     font-size: 1.125rem;
     line-height: 1.5rem;
+    
 }
+
 
 .share{
     padding: 20px;
 }
-.share-ico{
+.share-icon{
     height: 32px;
     cursor: pointer;
+}
+.back:hover{
+   font-size: 30px;
+        
+     
 }
